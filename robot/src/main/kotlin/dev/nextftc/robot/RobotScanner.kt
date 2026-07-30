@@ -122,7 +122,18 @@ internal object RobotScanner : Scanner {
  * The robot instance is created using the constructor found by [RobotScanner].
  */
 object RobotState : OnCreateEventLoop {
+  /** The singleton or freshly constructed instance of the user's robot. */
+  internal lateinit var robot: NextRobot
+
   override fun onCreateEventLoop(context: Context, ftcEventLoop: FtcEventLoop) {
+    check(RobotScanner.foundRobot) {
+      "Unable to find a NextFTC robot class. Please ensure that there is one in your project " +
+        "(a class or object implementing NextRobot with a public no-argument constructor)."
+    }
+    check(!RobotScanner.foundMultiple) {
+      "Found multiple NextFTC robot classes. Please ensure that there is only one in your project."
+    }
+    robot = RobotScanner.robotConstructor()
     ftcEventLoop.opModeManager.registerListener(DriverStationTelemetry)
   }
 }

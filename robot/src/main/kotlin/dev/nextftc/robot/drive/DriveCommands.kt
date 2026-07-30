@@ -85,7 +85,24 @@ fun mecanumDriveFieldCentric(
   backRight.throttle = powers.backRight
 }
 
-/** Command that drives a tank drivetrain from [gamepad]'s sticks. */
+/** Command that drives a differential drivetrain arcade-style (one stick controls drive, one stick controls turn) from [gamepad]'s sticks. */
+fun arcadeDrive(
+  frontLeft: NextMotor,
+  frontRight: NextMotor,
+  backLeft: NextMotor,
+  backRight: NextMotor,
+  gamepad: Gamepad,
+): Command = Commands.infinite {
+  val leftPower = -gamepad.left_stick_y.toDouble() * scalar
+  val rightPower = -gamepad.right_stick_y.toDouble() * scalar
+
+  frontLeft.throttle = leftPower
+  frontRight.throttle = rightPower
+  backLeft.throttle = leftPower
+  backRight.throttle = rightPower
+}
+
+/** Command that drives a differential drivetrain tank-style (one stick controls left wheels, one stick controls right wheels) from [gamepad]'s sticks. */
 fun tankDrive(
   frontLeft: NextMotor,
   frontRight: NextMotor,
