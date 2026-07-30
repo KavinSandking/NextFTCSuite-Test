@@ -92,17 +92,12 @@ fun tankDrive(
   backLeft: NextMotor,
   backRight: NextMotor,
   gamepad: Gamepad,
-  kinematics: TankKinematics = TankKinematics(),
 ): Command = Commands.infinite {
-  val powers = kinematics.calculate(
-    DriveInput(
-      y = 0.0,
-      x = -gamepad.left_stick_y.toDouble() * scalar,
-      rx = gamepad.right_stick_x.toDouble() * scalar,
-    ),
-  )
-  frontLeft.throttle = powers.left
-  backLeft.throttle = powers.left
-  frontRight.throttle = powers.right
-  backRight.throttle = powers.right
+  val leftPower = -gamepad.left_stick_y.toDouble() * scalar
+  val rightPower = -gamepad.right_stick_y.toDouble() * scalar
+
+  frontLeft.throttle = leftPower
+  frontRight.throttle = rightPower
+  backLeft.throttle = leftPower
+  backRight.throttle = rightPower
 }
