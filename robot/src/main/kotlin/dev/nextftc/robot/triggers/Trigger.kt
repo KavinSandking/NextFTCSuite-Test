@@ -141,6 +141,8 @@ class Trigger @JvmOverloads constructor(
   fun toggleOnTrue(command: Command): Trigger {
     addBinding { previous, current ->
       if (!previous && current) {
+        println("toggleOnTrue fired")
+
         if (command.isScheduled) {
           command.cancel()
         } else {
