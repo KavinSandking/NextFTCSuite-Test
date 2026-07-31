@@ -1,7 +1,6 @@
 package dev.nextftc.robot.opmode
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled
-import com.qualcomm.robotcore.eventloop.opmode.OpMode
 import dev.frozenmilk.sinister.sdk.opmodes.OpModeScanner
 import dev.frozenmilk.sinister.sdk.opmodes.TeleopAutonomousOpModeScanner
 import dev.frozenmilk.sinister.targeting.SearchTarget
@@ -9,7 +8,6 @@ import dev.frozenmilk.sinister.targeting.WideSearch
 import dev.frozenmilk.sinister.util.log.Logger
 import dev.frozenmilk.util.graph.rule.dependsOn
 import dev.nextftc.robot.RobotScanner
-import dev.nextftc.robot.RobotState
 import org.firstinspires.ftc.robotcore.internal.opmode.OpModeMeta
 import java.lang.reflect.Modifier
 import kotlin.reflect.KClass

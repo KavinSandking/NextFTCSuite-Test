@@ -1,10 +1,10 @@
 /*
- * Copyright (c) 2026 NextFTC Team
- *
- *  Use of this source code is governed by an BSD-3-clause
- *  license that can be found in the LICENSE.md file at the root of this repository or at
- *  https://opensource.org/license/bsd-3-clause.
- */
+* Copyright (c) 2026 NextFTC Team
+*
+*  Use of this source code is governed by an BSD-3-clause
+*  license that can be found in the LICENSE.md file at the root of this repository or at
+*  https://opensource.org/license/bsd-3-clause.
+*/
 
 package dev.nextftc.robot
 
@@ -14,14 +14,12 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled
 import dev.frozenmilk.sinister.Scanner
 import dev.frozenmilk.sinister.sdk.apphooks.OnCreateEventLoop
 import dev.frozenmilk.sinister.sdk.apphooks.OnCreateEventLoopScanner
-import dev.frozenmilk.sinister.sdk.opmodes.SinisterRegisteredOpModes
 import dev.frozenmilk.sinister.targeting.SearchTarget
 import dev.frozenmilk.sinister.targeting.WideSearch
 import dev.frozenmilk.sinister.util.log.Logger
 import dev.frozenmilk.util.graph.Graph
 import dev.frozenmilk.util.graph.rule.AdjacencyRule
 import dev.frozenmilk.util.graph.rule.dependsOn
-import dev.nextftc.hardware.RobotController
 import java.lang.reflect.Modifier
 import kotlin.reflect.KClass
 import kotlin.reflect.full.hasAnnotation
